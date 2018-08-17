@@ -48,6 +48,30 @@
     </div>
 </div>
 
+<!-- Counter -->
+<div id="app1" class="m-5">
+	<!-- counter by clicking -->
+	<button type="button" v-on:click="increase" class="btn btn-info">Click</button>
+	<p>{{ counter }}</p>
+
+	<!-- increase counter by 2 - just add (2), if you want to increase by 4, add(4) -->
+	<!-- Vue can take second argument need $ sign for event -->
+	<button type="button" v-on:click="anotherincrease(2, $event)">Click by 2</button>
+	<p>{{ counter2 }}</p>
+
+	<!-- display numbers of x and y when mouse move -->
+	<p v-on:mousemove="updateCoordinates">
+		Coordinates: {{ x }} / {{ y }}
+		- <span v-on:mousemove.stop=""> DEAD SPOT </span>
+		<!-- Vue modifier: in deadspot, number doesn't change -->
+	</p>
+	<!-- same as above but using funciton
+	<p v-on:mousemove="updateCoordinates">
+		Coordinates: {{ x }} / {{ y }}
+		- <span v-on:mousemove="dummy"> DEAD SPOT </span>
+	</p> -->
+</div>
+
 <!-- JQUERY -->
 		<!-- Vue.js -->
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

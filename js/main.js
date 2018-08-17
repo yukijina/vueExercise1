@@ -24,11 +24,40 @@ new Vue ({
     me: 'Yuki ',
     age: 28,
     link: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9PqvCqAfsJNWTHMLdwQ0zEKv2ZikLR419IEJssoX7ZrkV4pNP',
-    link_alt: 'cute cat',
+    link_alt: 'cute cat'
   },
   methods: {
     ram: function(){
       return Math.floor(Math.random() * (100-10-1)+10)
     },
+  }
+})
+
+// Counter
+new Vue ({
+  el: '#app1',
+  data: {
+    counter: 0,
+    counter2: 0,
+    x: 0,
+    y: 0
+  },
+  methods: {
+    increase: function() {
+      this.counter++;
+    },
+    anotherincrease: function(step, event) {
+      this.counter2 += step;  // you can change name "step" to any word, step = (2) in HTML
+    },
+    updateCoordinates: function(event){
+      //event is when event handler runs
+      this.x = event.clientX;  //clientX is default
+      this.y = event.clientY;  //clientY is default
+    },
+    //dummy: function(event) {
+      // stop changing numbers of x and y by adding this function
+      //span is a part of p element but by this stopPropagation, it does not affect event of p
+    //  event.stopPropagation();
+    //}
   }
 })
