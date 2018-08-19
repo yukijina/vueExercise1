@@ -59,5 +59,38 @@ new Vue ({
       //span is a part of p element but by this stopPropagation, it does not affect event of p
     //  event.stopPropagation();
     //}
+    alertMe: function() {
+      alert('Here you go!')
+    }
+  }
+})
+
+
+// Assignment2 exercise2
+new Vue ({
+  el: '#exercise2',
+  data: {
+    value: '',
+    value1: ''
+  },
+  methods: {
+    alertBtn: function() {
+      alert("You enter the button!")
+    },
+    inputValue: function(event) {
+      this.value = event.target.value
+    },
+    inputValue1: function(event) {
+      this.value1 = event.target.value //value is input value, not {{ value }}
+    }
+  }
+})
+
+//Assingment2 another way(solution)
+new Vue ({
+  el: '#ex2solution',
+  data: {
+    value: '',
+    value1: ''
   }
 })

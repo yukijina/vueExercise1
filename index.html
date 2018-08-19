@@ -70,7 +70,47 @@
 		Coordinates: {{ x }} / {{ y }}
 		- <span v-on:mousemove="dummy"> DEAD SPOT </span>
 	</p> -->
+
+	<!-- if you hit enter, it alert -->
+	<!-- Or if you enter space, it alert -->
+	<!-- if you put only keyup, it alerts when you type one word, that is not ideal -->
+	<input type="text" v-on:keyup.enter.space="alertMe">
 </div>
+
+<!-- Assignment2 exercise2 -->
+<h2 class="m-4">Assignment2</h2>
+<div id="exercise2" class="m-4">
+	<!-- 1) Show an alert when the Button gets clicked -->
+	<div>
+			<button v-on:click="alertBtn">Show Alert</button>
+	</div>
+	<!-- 2) Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value) -->
+	<div>
+			<input type="text" v-on:keydown="inputValue">
+			<p>{{ value }}</p>
+	</div>
+	<!-- 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key -->
+	<div>
+			<input type="text" v-on:keydown.enter="inputValue1">
+			<p>{{ value1 }}</p>
+	</div>
+</div>
+
+<!-- Another way for 2) and 3) -->
+<h4 class="mx-4">Another way (solution) for assignement2</h4>
+<div id="ex2solution" class="m-4">
+	<!-- 2) Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value) -->
+	<div>
+			<input type="text" v-on:keydown="value = $event.target.value">
+			<p>{{ value }}</p>
+	</div>
+	<!-- 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key -->
+	<div>
+			<input type="text" v-on:keydown.enter="value1 = $event.target.value">
+			<p>{{ value1 }}</p>
+	</div>
+</div>
+
 
 <!-- JQUERY -->
 		<!-- Vue.js -->
