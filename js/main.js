@@ -94,3 +94,63 @@ new Vue ({
     value1: ''
   }
 })
+
+//Section 2 Lecture 22
+new Vue ({
+  el: '#app3',
+  data: {
+    name: 'Max'
+  }
+})
+
+//Section 2 Lecture 23
+new Vue ({
+  el: '#lec23',
+  data: {
+    counter: 0,
+    secondCounter: 0
+  },
+  computed: {
+    output: function() {
+      console.log('computed')
+      return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5'
+    }
+  },
+  watch: {
+    //this runs whenever counter runs, thi is vue value
+    counter: function(value) {
+      //need to store this allows to acess property
+      var vm = this;
+      setTimeout(function(){
+        vm.counter = 0;
+      },2000)
+    }
+  },
+  methods: {
+    result: function() {
+      console.log('methods')
+      return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5'
+    }
+  }
+})
+
+//Assignment3 exercise
+new Vue ({
+  el: '#exercise3',
+  data: {
+    value: 0,
+  },
+  computed: {
+    result: function() {
+      return this.value > 37 ? 'done' : 'not there yet'
+    }
+  },
+  watch: {
+    result: function(value) {
+      var vm = this;
+      setTimeout(function(){
+        vm.value = 0;
+      },5000) // after result reached >37, in 5 sec, it returns 0
+    }
+  }
+})
